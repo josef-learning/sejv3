@@ -1,0 +1,68 @@
+﻿<div class="top-row ps-xl-2 navbar navbar-light">
+	<div class="container-fluid">
+		@* <NavLink class="nav-link" href="/">
+			<span class="" aria-hidden="true"></span><img src="/logo.png" height="60" width="45" />
+		</NavLink> *@
+		@* <img src="/logo.png" height="50" width="40" />
+		<button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+		<span class="navbar-toggler-icon"></span>
+		</button> *@
+
+	</div>
+</div>
+
+<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
+	<nav class="flex-column">
+		<div class="nav-item px-3">
+			<NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+				<span class="" aria-hidden="true"></span> Hjem
+			</NavLink>
+		</div>
+		<div class="nav-item px-3">
+			<NavLink class="nav-link" href="Omos">
+				<span class="" aria-hidden="true"></span> Om os
+			</NavLink>
+		</div>
+		<div class="nav-item px-3">
+			<NavLink class="nav-link" href="Rugbroed">
+				<span class="" aria-hidden="true"></span> Rugbrød
+			</NavLink>
+		</div>
+		<div class="nav-item px-3">
+			<NavLink class="nav-link" href="Baguettes">
+				<span class="" aria-hidden="true"></span> Baguettes
+			</NavLink>
+		</div>
+		<div class="nav-item px-3">
+			<NavLink class="nav-link" href="Specialbroed">
+				<span class="" aria-hidden="true"></span> Specialbrød
+			</NavLink>
+		</div>
+		<div class="nav-item px-3">
+			<NavLink class="nav-link" href="Fester">
+				<span class="" aria-hidden="true"></span> Fester
+			</NavLink>
+		</div>
+		<div class="nav-item px-3">
+			<NavLink class="nav-link" href="Boernefoedselsdag">
+				<span class="" aria-hidden="true"></span> Børnefødselsdag
+			</NavLink>
+		</div>
+		<div class="nav-item px-3">
+			<NavLink class="nav-link" href="kontakt">
+				<span class="" aria-hidden="true"></span> Kontakt os
+			</NavLink>
+		</div>
+	</nav>
+</div>
+
+@code {
+	private bool collapseNavMenu = true;
+
+	private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+	private void ToggleNavMenu()
+	{
+		collapseNavMenu = !collapseNavMenu;
+	}
+}
